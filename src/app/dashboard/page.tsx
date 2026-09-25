@@ -18,9 +18,11 @@ export default async function DashboardPage() {
       id: session.userId,
     },
     select: {
+      id: true,
       name: true,
       email: true,
       role: true,
+      avatar: true,
     },
   });
 //Jika user tidak ditemukan, redirect ke halaman login

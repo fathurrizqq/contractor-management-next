@@ -3,11 +3,16 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+import ProfileMenu from "./components/ProfileMenu";
+import OnlineUsers from "./components/OnlineUsers";
+
 type DashboardNavbarProps = {
   user: {
+    id: string;
     name: string;
     email: string;
     role: string;
+    avatar?: string | null;
   };
 };
 
@@ -40,33 +45,29 @@ export default function DashboardNavbar({
   }
 
   return (
-    <header className="border-b bg-white">
-      <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between px-6">
-        <div>
-          <p className="text-sm font-semibold text-slate-900">
-            {user.name}
+    <header className="border-b border-slate-200 bg-white">
+      <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-3 px-3 sm:gap-4 sm:px-6">
+
+          <p className="shrink-0">
+            <ProfileMenu user={user} />
           </p>
 
-          <div className="flex items-center gap-2 text-xs text-slate-500">
-            <span>{user.email}</span>
+          <div className="shrink-0">
+            <OnlineUsers currentUserId={user.id} />
+          </div>  
 
-            <span className="text-slate-300">
-              |
-            </span>
+          <div className="min-w-0 flex-1"></div>
 
-            <span>
-              {user.role}
-            </span>
-          </div>
+        <div className="shrink-0">
+          <button
+            type="button"
+            onClick={handleLogout}
+            disabled={loading}
+            className="rounded-xl border border-red-200 px-3 py-2 text-sm font-medium text-red-600 transition hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {loading ? "Logout..." : "Logout"}
+          </button>
         </div>
-        <button
-          type="button"
-          onClick={handleLogout}
-          disabled={loading}
-          className="rounded-lg border border-red-200 px-4 py-2 text-sm font-medium text-red-600 transition hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          {loading ? "Logout..." : "Logout"}
-        </button>
       </div>
     </header>
   );
