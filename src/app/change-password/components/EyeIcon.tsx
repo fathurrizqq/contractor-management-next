@@ -1,0 +1,39 @@
+type EyeIconProps = {
+  hidden: boolean;
+};
+
+export default function EyeIcon({ hidden }: EyeIconProps) {
+  if (hidden) {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="h-5 w-5"
+        aria-hidden="true"
+      >
+        <path d="M3 3l18 18" />
+        <path d="M10.58 10.58a2 2 0 0 0 2.83 2.83" />
+        <path d="M9.88 4.24A10.94 10.94 0 0 1 12 4c5 0 8.5 4 10 8a16.2 16.2 0 0 1-2.1 3.36" />
+        <path d="M6.61 6.61C4.8 7.83 3.47 9.61 2 12c1.5 4 5 8 10 8a10.7 10.7 0 0 0 4.11-.81" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="h-5 w-5"
+      aria-hidden="true"
+    >
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
