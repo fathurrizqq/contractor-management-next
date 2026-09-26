@@ -7,11 +7,7 @@ export const dynamic = "force-dynamic";
 
 const ONLINE_THRESHOLD_SECONDS = 60;
 
-/**
- * GET
- *
- * Mengambil daftar user yang sedang online.
- */
+/* GET - Mengambil daftar user yang sedang online */
 export async function GET() {
   try {
     // Pastikan user sudah login
@@ -87,11 +83,7 @@ export async function GET() {
   }
 }
 
-/**
- * POST
- *
- * Memperbarui lastSeen user yang sedang login.
- */
+/*POST - Memperbarui LastSeen user yang sedang login */
 export async function POST() {
   try {
     // Ambil session user

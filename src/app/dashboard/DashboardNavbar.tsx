@@ -46,11 +46,24 @@ export default function DashboardNavbar({
 
   return (
     <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-3 px-3 sm:gap-4 sm:px-6">
+      <div 
+        className="
+          mx-auto 
+          flex 
+          min-h-16 
+          max-w-7xl 
+          items-center 
+          justify-between 
+          gap-3 
+          px-3 
+          sm:gap-4 
+          sm:px-6
+        "
+      >
 
-          <p className="shrink-0">
+          <div className="shrink-0">
             <ProfileMenu user={user} />
-          </p>
+          </div>
 
           <div className="shrink-0">
             <OnlineUsers currentUserId={user.id} />
@@ -63,7 +76,21 @@ export default function DashboardNavbar({
             type="button"
             onClick={handleLogout}
             disabled={loading}
-            className="rounded-xl border border-red-200 px-3 py-2 text-sm font-medium text-red-600 transition hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-50"
+            className="
+              rounded-xl 
+              border 
+              border-blue-950 
+              px-3 
+              py-2 
+              text-sm
+              bg-blue-800 
+              font-medium 
+              text-white 
+              transition 
+              hover:bg-blue-700 
+              disabled:cursor-not-allowed 
+              disabled:opacity-50
+            "
           >
             {loading ? "Logout..." : "Logout"}
           </button>

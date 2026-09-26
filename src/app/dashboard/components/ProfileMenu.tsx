@@ -56,9 +56,34 @@ export default function ProfileMenu({ user }: ProfileMenuProps) {
         onClick={handleToggle}
         aria-expanded={isOpen}
         aria-haspopup="dialog"
-        className="flex items-center gap-3 rounded-xl px-2 py-1.5 text-left transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-300"
+        className="
+          flex 
+          items-center 
+          gap-3 
+          rounded-xl 
+          px-2 
+          py-1.5 
+          text-left 
+          transition 
+          hover:bg-slate-100 
+          focus:outline-none 
+          focus:ring-2 
+          focus:ring-slate-300
+        "
       >
-        <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
+        <div 
+          className="
+            relative 
+            h-10 
+            w-10 
+            shrink-0 
+            overflow-hidden 
+            rounded-full 
+            border 
+            border-slate-200 
+            bg-slate-100
+          "
+          >
           {user.avatar ? (
             <Image
               src={user.avatar}
@@ -68,18 +93,44 @@ export default function ProfileMenu({ user }: ProfileMenuProps) {
               className="object-cover"
             />
           ) : (
-            <div className="flex h-full w-full items-center justify-center text-sm font-semibold text-slate-600">
+            <div 
+              className="
+                flex 
+                h-full 
+                w-full 
+                items-center 
+                justify-center 
+                text-sm 
+                font-semibold 
+                text-slate-600
+              "
+            >
               {user.name.charAt(0).toUpperCase()}
             </div>
           )}
         </div>
 
         <div className="hidden min-w-0 sm:block">
-          <p className="truncate text-sm font-semibold text-slate-900">
+          <p 
+            className="
+              truncate 
+              text-sm 
+              font-semibold 
+              text-slate-900
+              select-none
+            "
+          >
             {user.name}
           </p>
 
-          <p className="truncate text-xs text-slate-500">
+          <p 
+            className="
+              truncate 
+              text-xs 
+              text-slate-500
+              select-none 
+            "
+          >
             {roleLabel}
           </p>
         </div>
@@ -104,10 +155,33 @@ export default function ProfileMenu({ user }: ProfileMenuProps) {
         <div
           role="dialog"
           aria-modal="false"
-          className="absolute right-0 top-[calc(100%+12px)] z-50 w-[calc(100vw-32px)] max-w-sm rounded-2xl border border-slate-200 bg-white p-5 shadow-xl"
+          className="
+            absolute 
+            top-[calc(100%+12px)] 
+            z-50 
+            w-[calc(100vw-32px)] 
+            max-w-sm 
+            rounded-2xl 
+            border 
+            border-slate-200 
+            bg-white 
+            p-5 
+            shadow-xl
+          "
         >
           <div className="flex flex-col items-center text-center">
-            <div className="relative h-20 w-20 overflow-hidden rounded-full border-2 border-slate-200 bg-slate-100">
+            <div 
+              className="
+                relative 
+                h-20 
+                w-20 
+                overflow-hidden 
+                rounded-full 
+                border-2 
+                border-slate-200 
+                bg-slate-100
+              "
+            >
               {user.avatar ? (
                 <Image
                   src={user.avatar}
@@ -117,21 +191,56 @@ export default function ProfileMenu({ user }: ProfileMenuProps) {
                   className="object-cover"
                 />
               ) : (
-                <div className="flex h-full w-full items-center justify-center text-2xl font-bold text-slate-600">
+                <div 
+                  className="
+                    flex 
+                    h-full 
+                    w-full 
+                    items-center 
+                    justify-center 
+                    text-2xl 
+                    font-bold 
+                    text-slate-600
+                  "
+                >
                   {user.name.charAt(0).toUpperCase()}
                 </div>
               )}
             </div>
 
-            <h2 className="mt-4 text-lg font-semibold text-slate-900">
+            <h2 
+              className="
+                mt-4 
+                text-lg 
+                font-semibold 
+                text-slate-900
+                select-none
+              "
+            >
               {user.name}
             </h2>
 
-            <p className="mt-1 text-sm text-slate-500">
+            <p 
+              className="
+                mt-1 
+                text-sm 
+                text-slate-500
+                select-none
+              "
+            >
               {roleLabel}
             </p>
 
-            <p className="mt-1 max-w-full truncate text-xs text-slate-400">
+            <p 
+              className="
+                mt-1 
+                max-w-full 
+                truncate 
+                text-xs 
+                text-slate-400
+                select-none
+              "
+            >
               {user.email}
             </p>
           </div>
@@ -141,14 +250,39 @@ export default function ProfileMenu({ user }: ProfileMenuProps) {
           <div className="space-y-2">
             <button
               type="button"
-              className="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+              className="
+                w-full 
+                rounded-xl 
+                border 
+                border-slate-200 
+                px-4 py-3 
+                text-left 
+                text-sm 
+                font-medium 
+                text-slate-700 
+                transition 
+                hover:bg-slate-50
+              "
             >
               Edit Profile
             </button>
 
             <button
               type="button"
-              className="w-full rounded-xl border border-slate-200 px-4 py-3 text-left text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+              className="
+                w-full 
+                rounded-xl 
+                border 
+                border-slate-200 
+                px-4 
+                py-3 
+                text-left 
+                text-sm 
+                font-medium 
+                text-slate-700 
+                transition 
+                hover:bg-slate-50
+              "
             >
               Change Password
             </button>
@@ -157,7 +291,19 @@ export default function ProfileMenu({ user }: ProfileMenuProps) {
           <button
             type="button"
             onClick={() => setIsOpen(false)}
-            className="mt-4 w-full rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+            className="
+              mt-4 
+              w-full 
+              rounded-xl
+              border-blue-950 
+              bg-blue-800 
+              px-4 
+              py-3 
+              text-sm 
+              font-semibold 
+              text-white transition 
+              hover:bg-blue-700
+            "
           >
             Close
           </button>
